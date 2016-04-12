@@ -10,13 +10,13 @@
 #define PATHNODE_HPP_
 
 namespace Auton {
-	class PathNode : public Robos::NodeBase {
-	private:
-		Robos::MessageBasePtr& MainCallbackImpl(Robos::MessageBasePtr& pMessage) ;
-	public:
-		PathNode();
-		~PathNode();
-	};
+class PathNode : public Robos::NodeBase {
+private:
+	Robos::MessageBasePtr& MainCallbackImpl(Robos::MessageBasePtr& pMessage) ;
+public:
+	PathNode();
+	~PathNode();
+};
 }
 
 

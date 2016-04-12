@@ -9,11 +9,13 @@
 #define LOCALIZATION_HPP_
 
 namespace Auton {
-	class Localization {
-	public:
-		static Pos getPos();
+class Localization {
+private:
 
-	};
+public:
+	static Pos getPos();
+
+};
 }
 
 

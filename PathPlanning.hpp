@@ -10,14 +10,14 @@
 #define PATHPLANNING_HPP_
 
 namespace Auton {
-	struct Path {
-		Pos * nodes;
-		int numNodes;
-	};
-	class PathPlanning {
-	public:
-		static Path pathFrom(Pos start, Pos end);
-	};
+struct Path {
+	Pos * nodes;
+	int numNodes;
+};
+class PathPlanning {
+public:
+	static Path pathFrom(Pos start, Pos end);
+};
 }
 
 

@@ -25,49 +25,49 @@
 #define COMMAND_INDV 0x06
 
 namespace Auton {
-	struct MotorStatus {
-		// COMMAND_*
-		char command;
-		// The speed of each motor mapped from -128 to 127
-		char * speeds;
-		// The power draw of each motor mapped from 0 to 255
-		char * powerDraw;
-		// The distance each motor needs to travel mapped from 0 to 255
-		char * distances;
-		// Number of motors
-		int numMotors;
-		// Estimated time to completion in millis
-		long estCompletion;
-	};
-	struct MotorMovement {
-		char command;
-		char speed;
-		char distance;
-	};
+struct MotorStatus {
+	// COMMAND_*
+	char command;
+	// The speed of each motor mapped from -128 to 127
+	char * speeds;
+	// The power draw of each motor mapped from 0 to 255
+	char * powerDraw;
+	// The distance each motor needs to travel mapped from 0 to 255
+	char * distances;
+	// Number of motors
+	int numMotors;
+	// Estimated time to completion in millis
+	long estCompletion;
+};
+struct MotorMovement {
+	char command;
+	char speed;
+	char distance;
+};
 
-	class MotorControl {
-	private:
-		static char rampType = 0x01;
-		static double rampFactor = 2.0;
-	public:
-		// Speed
-		static void forward(char speed, bool ovr);
-		static void forward(char speed, char distance, bool ovr);
-		static void backward(char speed, bool ovr);
-		static void backward(char speed, char distance, bool ovr);
-		static void turnLeft(char speed, bool ovr);
-		static void turnLeft(char speed, char angle, bool ovr);
-		static void turnRight(char speed, bool ovr);
-		static void turnRight(char speed, char angle, bool ovr);
-		static void openWheels(bool ovr);
-		static void closeWheels(bool ovr);
+class MotorControl {
+private:
+	static char rampType = 0x01;
+	static double rampFactor = 2.0;
+public:
+	// Speed
+	static void forward(char speed, bool ovr);
+	static void forward(char speed, char distance, bool ovr);
+	static void backward(char speed, bool ovr);
+	static void backward(char speed, char distance, bool ovr);
+	static void turnLeft(char speed, bool ovr);
+	static void turnLeft(char speed, char angle, bool ovr);
+	static void turnRight(char speed, bool ovr);
+	static void turnRight(char speed, char angle, bool ovr);
+	static void openWheels(bool ovr);
+	static void closeWheels(bool ovr);
 
-		static void setMotorVelocities(char * motors,int * speeds, int num, bool ovr);
+	static void setMotorVelocities(char * motors,int * speeds, int num, bool ovr);
 
-		static MotorStatus getMotorStatus();
+	static MotorStatus getMotorStatus();
 
-		static void setRampType(char type, double factor);
-	};
+	static void setRampType(char type, double factor);
+};
 }
 
 

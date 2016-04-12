@@ -21,25 +21,25 @@
 #define MOTORMOVE_BL 0x03
 
 namespace Auton {
-	struct MessageDrive : public Robos::MessageBase {
-		char action, speed, dist;
-	};
-	struct MessageMotorMove : public Robos::MessageBase {
-		char * motors;
-		char * speeds;
-		int num;
-	};
-	struct MessageRobPositionUpdate : public Robos::MessageBase {
-		double posX, posY, theta;
-	};
-	struct MessageObstPositionUpdate : public Robos::MessageBase {
-		double * posX, posY, radius;
-		int num;
-	};
-	struct MessagePathUpdate : public Robos::MessageBase {
-		bool block; // If true, then stop and start new.  If false, append
+struct MessageDrive : public Robos::MessageBase {
+	char action, speed, dist;
+};
+struct MessageMotorMove : public Robos::MessageBase {
+	char * motors;
+	char * speeds;
+	int num;
+};
+struct MessageRobPositionUpdate : public Robos::MessageBase {
+	double posX, posY, theta;
+};
+struct MessageObstPositionUpdate : public Robos::MessageBase {
+	double * posX, posY, radius;
+	int num;
+};
+struct MessagePathUpdate : public Robos::MessageBase {
+	bool block; // If true, then stop and start new.  If false, append
 
-	};
+};
 }
 
 

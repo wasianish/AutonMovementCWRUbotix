@@ -10,13 +10,13 @@
 #define AUTONNODE_HPP_
 
 namespace Auton {
-	class AutonNode : public Robos::NodeBase {
-	private:
-		Robos::MessageBasePtr& MainCallbackImpl(Robos::MessageBasePtr& pMessage) override;
-	public:
-		AutonNode();
-		~AutonNode();
-	};
+class AutonNode : public Robos::NodeBase {
+private:
+	Robos::MessageBasePtr& MainCallbackImpl(Robos::MessageBasePtr& pMessage) override;
+public:
+	AutonNode();
+	~AutonNode();
+};
 }
 
 #endif /* AUTONNODE_HPP_ */

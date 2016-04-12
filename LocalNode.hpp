@@ -10,13 +10,13 @@
 #define LOCALNODE_HPP_
 
 namespace Auton {
-	class LocalNode : public Robos::NodeBase {
-	private:
-		Robos::MessageBasePtr& MainCallbackImpl(Robos::MessageBasePtr& pMessage) ;
-	public:
-		LocalNode();
-		~LocalNode();
-	};
+class LocalNode : public Robos::NodeBase {
+private:
+	Robos::MessageBasePtr& MainCallbackImpl(Robos::MessageBasePtr& pMessage) ;
+public:
+	LocalNode();
+	~LocalNode();
+};
 }
 
 
