@@ -17,12 +17,12 @@
 #define MOTOR_BL 0x03
 
 #define COMMAND_FORWARD 0x00
-#define COMMAND_BACKWARD 0x00
-#define COMMAND_TURNL 0x00
-#define COMMAND_TURNR 0x00
-#define COMMAND_OPENW 0x00
-#define COMMAND_CLOSEW 0x00
-#define COMMAND_INDV 0x00
+#define COMMAND_BACKWARD 0x01
+#define COMMAND_TURNL 0x02
+#define COMMAND_TURNR 0x03
+#define COMMAND_OPENW 0x04
+#define COMMAND_CLOSEW 0x05
+#define COMMAND_INDV 0x06
 
 namespace Auton {
 	struct MotorStatus {
@@ -34,8 +34,15 @@ namespace Auton {
 		char * powerDraw;
 		// The distance each motor needs to travel mapped from 0 to 255
 		char * distances;
+		// Number of motors
+		int numMotors;
 		// Estimated time to completion in millis
 		long estCompletion;
+	};
+	struct MotorMovement {
+		char command;
+		char speed;
+		char distance;
 	};
 
 	class MotorControl {
