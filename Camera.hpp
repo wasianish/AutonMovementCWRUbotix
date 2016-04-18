@@ -4,7 +4,8 @@
  *  Created on: Apr 12, 2016
  *      Author: Anno
  */
-
+#include <opencv2/opencv.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
 #ifndef CAMERA_HPP_
 #define CAMERA_HPP_
 
@@ -19,8 +20,14 @@ struct ImgData {
 	int numRocks;
 };
 class Camera {
+private:
+	cv::Mat img;
+	cv::VideoCapture cap;
 public:
-ImgData process
+	int initialize();
+	int close();
+	int capture();
+	ImgData process();
 };
 }
 
