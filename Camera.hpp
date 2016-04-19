@@ -6,19 +6,11 @@
  */
 #include <opencv2/opencv.hpp>
 #include <opencv2/imgproc/imgproc.hpp>
+#include "AutonUtil.hpp"
 #ifndef CAMERA_HPP_
 #define CAMERA_HPP_
 
 namespace Auton {
-struct ImgData {
-	int * xBalls;
-	int * yBalls;
-	int * rBalls;
-	int numBalls;
-	int * xRocks;
-	int * yRocls;
-	int numRocks;
-};
 class Camera {
 private:
 	static cv::VideoCapture cap;

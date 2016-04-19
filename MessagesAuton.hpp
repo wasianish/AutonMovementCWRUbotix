@@ -29,16 +29,23 @@ struct MessageMotorMove : public Robos::MessageBase {
 	char * speeds;
 	int num;
 };
-struct MessageRobPositionUpdate : public Robos::MessageBase {
-	double posX, posY, theta;
+struct MessageGoto : public Robos::MessageBase {
+
 };
-struct MessageObstPositionUpdate : public Robos::MessageBase {
-	double * posX, posY, radius;
-	int num;
+struct MessagePositionUpdate : public Robos::MessageBase {
+	double robPosX, robPosY, robTheta;
+	double * obstPosX, obstPosY, obstRad;
 };
 struct MessagePathUpdate : public Robos::MessageBase {
 	bool block; // If true, then stop and start new.  If false, append
 
+};
+struct MessageDig : public Robos::MessageBase {
+
+};
+struct MessageArmRotate : public Robos::MessageBase {
+	// Theta is
+	double theta;
 };
 }
 

@@ -9,6 +9,15 @@
 #define MOTORUTIL_HPP_
 
 namespace Auton {
+struct ImgData {
+	int * xBalls;
+	int * yBalls;
+	int * rBalls;
+	int numBalls;
+	int * xRocks;
+	int * yRocls;
+	int numRocks;
+};
 struct RobotPos {
 	double x,y,heading;
 };
