@@ -12,8 +12,12 @@ namespace Auton {
 class Localization {
 private:
 public:
-	static RobotPos calcLoc();
-	static RobotPos getLocEstimate();
+	static ObstPos * obstaclePositions;
+	static int numObstacles;
+	static RobotPos robotPosEstimate;
+	static RobotPos robotPosCalc;
+
+	static void calcLoc();
 	static void updateLocEstimate(MotorStatus status);
 };
 }

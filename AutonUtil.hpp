@@ -21,6 +21,9 @@ struct ImgData {
 struct RobotPos {
 	double x,y,heading;
 };
+struct ObstPos {
+	double x,y,radius;
+};
 struct Rot {
 	double yaw,pitch;
 };
@@ -51,6 +54,8 @@ struct MotorMovement {
 };
 class MotorUtil {
 public:
+	const static double robotWidth = .75;
+
 	static double charToDoubleVelocity(char vel);
 	static double charToDoubleDistance(char dist);
 	static double charToDoubleAngle(char dist);

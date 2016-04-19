@@ -4,7 +4,7 @@
  *  Created on: Apr 10, 2016
  *      Author: Anno
  */
-#include "Robos/MessageBase.hpp"
+#include <Robos/MessageBase.hpp>
 #ifndef MESSAGESAUTON_HPP_
 #define MESSAGESAUTON_HPP_
 
