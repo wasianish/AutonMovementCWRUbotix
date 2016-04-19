@@ -11,13 +11,10 @@
 namespace Auton {
 class Localization {
 private:
-
 public:
-	static Pos getPos();
-
+	static RobotPos calcLoc();
+	static RobotPos getLocEstimate();
+	static void updateLocEstimate(MotorStatus status);
 };
 }
-
-
-
 #endif /* LOCALIZATION_HPP_ */

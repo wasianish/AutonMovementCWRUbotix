@@ -4,7 +4,7 @@
  *  Created on: Apr 12, 2016
  *      Author: Anno
  */
-
+#import "AutonUtil.hpp"
 #ifndef LOOKY_HPP_
 #define LOOKY_HPP_
 
@@ -13,12 +13,13 @@ namespace Auton
 class Looky
 {
 private:
-	double currentYaw;
-	double currentPitch;
 public:
-	static void rotYaw(double degrees);
-	static void rotPitch(double degrees);
+	static Rot currentRot;
+	static void rotate(Rot rot);
+	static void rotateTo(Rot rot);
 	static double getDistance();
+	static void resetAngleCounter();
+	static Rot getCurrentRotation();
 };
 }
 

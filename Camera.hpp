@@ -21,13 +21,15 @@ struct ImgData {
 };
 class Camera {
 private:
-	cv::Mat img;
-	cv::VideoCapture cap;
+	static cv::VideoCapture cap;
 public:
-	int initialize();
-	int close();
-	int capture();
-	ImgData process();
+	static int initialize();
+	static int close();
+	static int capture();
+	static int process();
+
+	static cv::Mat img;
+	static ImgData processed;
 };
 }
 
