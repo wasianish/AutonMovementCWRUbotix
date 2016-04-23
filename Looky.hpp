@@ -19,7 +19,6 @@ public:
 	static void rotateTo(Rot rot);
 	static double getDistance();
 	static void resetAngleCounter();
-	static Rot getCurrentRotation();
 };
 }
 

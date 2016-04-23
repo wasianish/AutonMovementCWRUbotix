@@ -4,7 +4,7 @@
  *  Created on: Apr 10, 2016
  *      Author: Anno
  */
-
+#include <cmath>
 #ifndef MOTORUTIL_HPP_
 #define MOTORUTIL_HPP_
 
@@ -26,7 +26,7 @@ struct ObstPos {
 };
 struct Rot {
 	double yaw,pitch;
-};
+} homeRot;
 struct Path {
 	RobotPos * nodes;
 	int numNodes;
@@ -52,16 +52,26 @@ struct MotorMovement {
 	char speed;
 	char distance;
 };
-class MotorUtil {
+class AutonUtil {
 public:
 	const static double robotWidth = .75;
+	const static int cameraResolutionWidth = 1920;
+	const static int cameraResolutionHeight = 1080;
+	const static double fov = 78*180/M_PI;
 
 	static double charToDoubleVelocity(char vel);
 	static double charToDoubleDistance(char dist);
+	static double charToDoubleAngularVelocity(char avel);
 	static double charToDoubleAngle(char dist);
+	static double charToDoubleArmVelocity(char dist);
+	static double charToDoubleArmDistance(char dist);
 	static char doubleToCharVelocity(double vel);
 	static char doubleToCharDistance(double dist);
+	static char doubleToCharAngularVelocity(double avel);
 	static char doubleToCharAngle(double dist);
+	static char doubleToCharArmVelocity(double dist);
+	static char doubleToCharArmDistance(double dist);
+	static char doubleToCharBucketSpeed(double speed);
 };
 }
 

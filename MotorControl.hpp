@@ -4,7 +4,7 @@
  *  Created on: Apr 10, 2016
  *      Author: Anno
  */
-#import "AutonUtil.hpp"
+#include "AutonUtil.hpp"
 #ifndef MOTORCONTROL_HPP_
 #define MOTORCONTROL_HPP_
 
@@ -24,9 +24,14 @@
 #define	CMD_BWD		0x01
 #define	CMD_TL		0x02
 #define	CMD_TR		0x03
-#define	CMD_OPNW	0x04
-#define	CMD_CLW		0x05
-#define	CMD_INDV	0x06
+#define	CMD_W		0x04
+#define	CMD_INDV	0x05
+#define CMD_TLTD	0x06
+#define CMD_TLTU	0x07
+#define CMD_TRAD	0x08
+#define CMD_TRAU	0x09
+#define CMD_BF		0x0A
+#define CMD_BB		0x0B
 
 namespace Auton {
 class MotorControl {
@@ -35,27 +40,27 @@ private:
 	static double rampFactor = 2.0;
 public:
 	// Speed
-	static void forward(char speed, bool ovr);
-	static void forward(char speed, char distance, bool ovr);
-	static void backward(char speed, bool ovr);
-	static void backward(char speed, char distance, bool ovr);
-	static void turnLeft(char speed, bool ovr);
-	static void turnLeft(char speed, char angle, bool ovr);
-	static void turnRight(char speed, bool ovr);
-	static void turnRight(char speed, char angle, bool ovr);
+	static void forward(double speed, bool ovr);
+	static void forward(double speed, double distance, bool ovr);
+	static void backward(double speed, bool ovr);
+	static void backward(double speed, double distance, bool ovr);
+	static void turnLeft(double speed, bool ovr);
+	static void turnLeft(double speed, double angle, bool ovr);
+	static void turnRight(double speed, bool ovr);
+	static void turnRight(double speed, double angle, bool ovr);
 	static void openWheels(bool ovr);
 	static void closeWheels(bool ovr);
 
-	static void tiltArmDown(char angle);
-	static void tiltArmUp(char angle);
-	static void translateArmDown(char speed, char dist);
-	static void translateArmDown(char speed);
-	static void translateArmUp(char speed, char dist);
-	static void translateArmUp(char speed);
-	static void forwardBucket(char speed);
-	static void backwardBucket(char speed);
+	static void tiltArmDown(double angle);
+	static void tiltArmUp(double angle);
+	static void translateArmDown(double speed, double dist);
+	static void translateArmDown(double speed);
+	static void translateArmUp(double speed, double dist);
+	static void translateArmUp(double speed);
+	static void forwardBucket(double speed);
+	static void backwardBucket(double speed);
 
-	static void setMotorVelocities(char * motors, int * speeds, int num, bool ovr);
+	static void setMotorVelocities(char * motors, char * speeds, int num, bool ovr);
 
 	static MotorStatus getMotorStatus();
 

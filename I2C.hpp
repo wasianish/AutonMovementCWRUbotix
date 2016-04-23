@@ -15,16 +15,17 @@ class I2C {
 private:
 	;
 public:
-	void begin();
-	int requestFrom(char address, int quantity);
-	int requestFrom(char address, int quantity, bool stop);
-	void beginTransmission(char address);
-	void endTransmission();
-	void write(char value);
-	void write(char * data, int length);
-	int available();
-	char read();
-	void read(char& buffer, int len);
+	static void begin();
+	static int requestFrom(char address, int quantity);
+	static int requestFrom(char address, int quantity, bool stop);
+	static void beginTransmission(char address);
+	static void endTransmission();
+	static void write(char value);
+	static void write(char * data, int length);
+	static int available();
+	static char read();
+	static void read(char& buffer, int len);
+	static void sendCommand(char command, char * data, int len);
 };
 }
 

@@ -22,6 +22,8 @@ public:
 
 	static cv::Mat img;
 	static ImgData processed;
+	const static double fov = 78;
+	const static double fov_overlap = 10;
 };
 }
 
